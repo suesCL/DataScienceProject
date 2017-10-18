@@ -53,14 +53,14 @@ def jsonConvert(fp):
 This part intends to derive the score for non-sentiment-carrying terms in each tweet based on the scores of sentiment-carrying words.
 
 **Procedures:**
-1. Split each long string of tweet text into smaller strings based on white spaces. Each string corresponds to a word or phrase. 
+1. Split each long string of tweet text into smaller strings based on white spaces. Each string corresponds to a word or phrase. Create a list containing all of the words for each tweet. 
 ```
 for line in response:
         list = line.split(' ')
         list = [word.strip() for word in list]
         list = [x for x in list if x]
 ```
-2. Create a list containing all of the words for each tweet. Find the sentiment-carrying terms in the list and count the number of positive terms and the number of negative terms respectively. Substracting the number of negative terms from the number of postive terms gives the score for all non-sentiment-carrying words in the tweet text. Add them to a dictionary of new terms from all tweets.
+2. Find the sentiment-carrying terms in the list and count the number of positive terms and the number of negative terms respectively. Substracting the number of negative terms from the number of postive terms gives the score for all non-sentiment-carrying words in the tweet text. Add them to a dictionary of new terms from all tweets.
 ```
         countPos = 0
         countNeg = 0
